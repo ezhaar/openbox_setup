@@ -6,20 +6,23 @@
 
 # If you want to use GNOME config tools...
 #
-#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
-#  /usr/lib/openbox/gnome-settings-daemon &
-#elif which gnome-settings-daemon >/dev/null 2>&1; then
-#  gnome-settings-daemon &
-#fi
+if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+  /usr/lib/openbox/gnome-settings-daemon &
+elif which gnome-settings-daemon >/dev/null 2>&1; then
+  gnome-settings-daemon &
+fi
 
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
 xrandr --dpi 128
+#(gnome-settings-daemon) &
 (/usr/bin/dropboxd) &
-(sleep 1s && conky) &
 (sleep 1s && nitrogen --restore) &
 (sleep 1s && tint2) &
-(sleep 1s && nm-applet) &
-(sleep 1s && volumeicon) &
+(conky) &
+(nm-applet) &
+(volumeicon) &
 ##Sound Icon
+syndaemon -i 1.0 -K -R &
+xinput set-button-map "SynPS/2 Synaptics TouchPad" 1 2 3 5 4 6 7 8 9 10 11 12
