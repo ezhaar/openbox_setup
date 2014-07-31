@@ -15,14 +15,13 @@ fi
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-xrandr --dpi 128
 #(gnome-settings-daemon) &
+xrandr --dpi 128
 (/usr/bin/dropboxd) &
 (sleep 1s && nitrogen --restore) &
 (sleep 1s && tint2) &
 (conky) &
 (nm-applet) &
 (volumeicon) &
-##Sound Icon
 syndaemon -i 1.0 -K -R &
 xinput set-button-map "SynPS/2 Synaptics TouchPad" 1 2 3 5 4 6 7 8 9 10 11 12

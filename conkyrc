@@ -1,0 +1,122 @@
+# Use Xft?
+use_xft yes
+xftfont mono:size=10
+xftalpha 0.8
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 2
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Full transparency (under Gnome 3)
+#own_window_type normal
+#own_window_argb_visual yes
+#own_window_argb_value 255
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 600
+maximum_width 500
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+# border_margin 1
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color white
+#default_shade_color black
+#default_outline_color black
+own_window_colour white
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 15
+gap_y 90
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+#cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain
+# objects.
+use_spacer none
+
+TEXT
+${color yellow}${font Feena Casual:size=32}${time %d %b %a} #${font Feena Casual:size=50}${time %b} ${font Feena Casual:size=22}${time %a}
+${color green}${font Feena Casual:size=45}${time %H:%M}
+${font Feena Casual:size=22 /}${color 6796C8}Mordor ${hr 2}
+${font Dejavu:size=12}${color red}Uptime: ${uptime}
+#${color}${pre_exec lsb_release -i -r -s}
+${color}${sysname} ${kernel}
+
+${font Feena Casual:size=22}${color 6796C8}CPU ${hr 2}
+${font Dejavu:size=12}${color}CPU ${cpu}%${alignr}${color ff6e00}${cpubar cpu1 10,80}
+#${color}CPU2 ${cpu cpu2}%${alignr}${color cb0c29}${cpubar cpu2 10,80}
+#${color}CPU3 ${cpu cpu3}%${alignr}${color ff6e00}${cpubar cpu3 10,80}
+#${color}CPU4 ${cpu cpu3}%${alignr}${color cb0c29}${cpubar cpu4 10,80}
+#${font Feena Casual:size=22}${color 6796C8}Memory ${hr 2}
+#${font Dejavu:size=12}${color}Mem  ${mem} Used of: ${memmax}${alignr}${color ab1852}${membar 10,80}
+#${font Feena Casual:size=22}${color 6796C8}File Systems ${hr 2}
+#${font Dejavu:size=12}${color}/ ${fs_used /} Used of: ${fs_size /}${alignr}${color 6796C8}${fs_bar 10,80 /}
+#${font Dejavu:size=12}${color}/Home ${fs_used /home} Used of: ${fs_size /home}${alignr}${color 6796C8}${fs_bar 10,80 /home}
+
+${font Feena Casual:size=22}${color 6796C8}Battery ${hr 2}
+${font Dejavu:size=12}${color}Battery ${battery_short CMB1 /}${alignr}${color ab1852}${battery_bar 10,80CMB1}
+${font Dejavu:size=12}${color}Remaining ${battery_time CMB1 /}${alignr}${color ab1852}${battery_bar 10,80CMB1}
+
+${font Feena Casual:size=22}${color orange}Network (${wireless_essid wlp3s0}) ${hr 2}$color
+${font Dejavu:size=12}${color white}Wifi: ${alignr}${addr wlp3s0}
+${color white}Ethernet: ${alignr}${addr enp0s25}
+#${color red}Signal: ${wireless_link_bar 15,80 wlp3s0}
+#${color white}Down:$color  ${downspeed wlp3s0} KB/s${alignr}${color white}Up:$color ${upspeed wlp3s0} KB/s
+#${downspeedgraph wlp3s0 25,120 000000 00ff00} ${alignr}${upspeedgraph wlp3s0 25,120 000000 ff0000}$color
+
+
+

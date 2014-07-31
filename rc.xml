@@ -39,8 +39,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>OB-glossy</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>Carbon</name>
+    <titleLayout>SLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -52,7 +52,7 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>yes</keepBorder>
-    <animateIconify>no</animateIconify>
+    <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Sans</name>
       <size>11</size>
@@ -156,14 +156,14 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>Top</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
     <noStrut>no</noStrut>
     <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -224,24 +224,48 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="A-S-1">
+      <action name="SendToDesktop">
+        <desktop>1</desktop>
+        <follow>yes</follow>
+      </action>
+    </keybind>
+    <keybind key="A-S-2">
+      <action name="SendToDesktop">
+        <desktop>2</desktop>
+        <follow>yes</follow>
+      </action>
+    </keybind>
+    <keybind key="A-S-3">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+        <follow>yes</follow>
+      </action>
+    </keybind>
+    <keybind key="A-S-4">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
+        <follow>yes</follow>
       </action>
     </keybind>
     <keybind key="W-d">
@@ -438,7 +462,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -726,6 +750,16 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application name="google-chrome-stable">
+      <desktop>1</desktop>
+      <maximized>no</maximized>
+      <layer>normal</layer>
+    </application>
+    <application name="gnome-terminal">
+      <desktop>1</desktop>
+      <maximized>no</maximized>
+      <layer>normal</layer>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
