@@ -39,7 +39,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Carbon</name>
+    <name>Bamboo</name>
     <titleLayout>SLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -371,6 +371,15 @@
         <command>gmrun</command>
       </action>
     </keybind>
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>laptopmode</name>
+        </startupnotify>
+        <command>/home/izhaar/lapmode</command>
+      </action>
+    </keybind>
     <keybind key="A-c">
       <action name="Execute">
         <startupnotify>
@@ -384,9 +393,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Gnome Terminal</name>
+          <name>XFCE Terminal</name>
         </startupnotify>
-        <command>gnome-terminal</command>
+        <command>xfce4-terminal</command>
       </action>
     </keybind>
   </keyboard>
@@ -755,8 +764,9 @@
       <maximized>no</maximized>
       <layer>normal</layer>
     </application>
-    <application name="gnome-terminal">
-      <desktop>1</desktop>
+    <application name="xfce4-terminal">
+      <desktop>2</desktop>
+      <focus>yes</focus>
       <maximized>no</maximized>
       <layer>normal</layer>
     </application>
